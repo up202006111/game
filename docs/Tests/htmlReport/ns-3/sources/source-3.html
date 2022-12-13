@@ -1,0 +1,135 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LevelController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.LDTS22_23.FB_WG.controller.game</a>
+</div>
+
+<h1>Coverage Summary for Class: LevelController (com.LDTS22_23.FB_WG.controller.game)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LevelController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (9/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.LDTS22_23.FB_WG.controller.game;
+&nbsp;
+&nbsp;import com.LDTS22_23.FB_WG.Game;
+&nbsp;import com.LDTS22_23.FB_WG.gui.GUI;
+&nbsp;import com.LDTS22_23.FB_WG.model.game.level.Level;
+&nbsp;import com.LDTS22_23.FB_WG.model.menu.LoaderMenuBuilder;
+&nbsp;import com.LDTS22_23.FB_WG.states.ScoreMenuState;
+&nbsp;import java.io.IOException;
+&nbsp;
+&nbsp;public class LevelController extends GameController {
+&nbsp;    private final CharacterController characterController;
+&nbsp;    public LevelController(Level level) {
+<b class="fc">&nbsp;        super(level);</b>
+<b class="fc">&nbsp;        characterController = new CharacterController(level);</b>
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public void step(Game game, GUI.ACTION action, long time) throws IOException {
+<b class="fc">&nbsp;        if (action == GUI.ACTION.QUIT) {</b>
+<b class="fc">&nbsp;            game.setState(new ScoreMenuState(new LoaderMenuBuilder().createScoreMenu(0, getModel().getFireBoy().getRedDiamonds(), getModel().getWaterGirl().getBlueDiamonds())));</b>
+&nbsp;        }
+<b class="fc">&nbsp;        else if (getModel().fallInTheAcidPool(getModel().getWaterGirl().getPosition()) || getModel().fallInTheAcidPool(getModel().getFireBoy().getPosition()) ||</b>
+<b class="fc">&nbsp;                getModel().fallInTheLavaPool(getModel().getWaterGirl().getPosition()) || getModel().fallInTheWaterPool(getModel().getFireBoy().getPosition())) {</b>
+<b class="nc">&nbsp;            game.setState(new ScoreMenuState(new LoaderMenuBuilder().createScoreMenu(0, getModel().getFireBoy().getRedDiamonds(), getModel().getWaterGirl().getBlueDiamonds())));</b>
+&nbsp;        }
+<b class="fc">&nbsp;        else if (getModel().enterBlueDoor(getModel().getWaterGirl().getPosition()) &amp;&amp; getModel().enterRedDoor(getModel().getFireBoy().getPosition())) {</b>
+<b class="fc">&nbsp;            game.setState(new ScoreMenuState(new LoaderMenuBuilder().createScoreMenu(1, getModel().getFireBoy().getRedDiamonds(), getModel().getWaterGirl().getBlueDiamonds())));</b>
+&nbsp;        }
+&nbsp;        else {
+<b class="fc">&nbsp;            characterController.step(game, action, time);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-13 01:37</div>
+</div>
+</body>
+</html>

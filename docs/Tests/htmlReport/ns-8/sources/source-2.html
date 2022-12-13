@@ -1,0 +1,133 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > LevelBuilder</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.LDTS22_23.FB_WG.model.game.level</a>
+</div>
+
+<h1>Coverage Summary for Class: LevelBuilder (com.LDTS22_23.FB_WG.model.game.level)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LevelBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/12)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.LDTS22_23.FB_WG.model.game.level;
+&nbsp;
+&nbsp;import com.LDTS22_23.FB_WG.model.game.elements.*;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+<b class="fc">&nbsp;public abstract class LevelBuilder {</b>
+&nbsp;    public Level createLevel() {
+<b class="fc">&nbsp;        Level level = new Level();</b>
+<b class="fc">&nbsp;        level.setWalls(createWalls());</b>
+<b class="fc">&nbsp;        level.setPools(createPools());</b>
+<b class="fc">&nbsp;        level.setElevators(createElevators());</b>
+<b class="fc">&nbsp;        level.setDiamonds(createDiamonds());</b>
+<b class="fc">&nbsp;        level.setBoxes(createBoxes());</b>
+<b class="fc">&nbsp;        level.setDoors(createDoors());</b>
+<b class="fc">&nbsp;        level.setFireBoy(createFireBoy());</b>
+<b class="fc">&nbsp;        level.setWaterGirl(createWaterGirl());</b>
+<b class="fc">&nbsp;        level.setLevers(createLevers());</b>
+<b class="fc">&nbsp;        return level;</b>
+&nbsp;    }
+&nbsp;    protected abstract List&lt;Wall&gt; createWalls();
+&nbsp;    protected abstract List&lt;Pool&gt; createPools();
+&nbsp;    protected abstract List&lt;Lever&gt; createLevers();
+&nbsp;    protected abstract List&lt;Elevator&gt; createElevators();
+&nbsp;    protected abstract ArrayList&lt;Diamond&gt; createDiamonds();
+&nbsp;    protected abstract List&lt;Door&gt; createDoors();
+&nbsp;    protected abstract List&lt;Box&gt; createBoxes();
+&nbsp;    protected abstract FireBoy createFireBoy();
+&nbsp;    protected abstract WaterGirl createWaterGirl();
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-13 01:37</div>
+</div>
+</body>
+</html>

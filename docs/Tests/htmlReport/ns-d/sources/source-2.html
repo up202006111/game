@@ -1,0 +1,165 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > InstructionsMenuViewer</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.LDTS22_23.FB_WG.viewer.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: InstructionsMenuViewer (com.LDTS22_23.FB_WG.viewer.menu)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">InstructionsMenuViewer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (42/42)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.LDTS22_23.FB_WG.viewer.menu;
+&nbsp;
+&nbsp;import com.LDTS22_23.FB_WG.gui.GUI;
+&nbsp;import com.LDTS22_23.FB_WG.model.Position;
+&nbsp;import com.LDTS22_23.FB_WG.model.menu.InstructionsMenu;
+&nbsp;import com.LDTS22_23.FB_WG.viewer.Viewer;
+&nbsp;
+&nbsp;public class InstructionsMenuViewer extends Viewer&lt;InstructionsMenu&gt; {
+<b class="fc">&nbsp;    public InstructionsMenuViewer(InstructionsMenu instructionsMenu) {super(instructionsMenu);}</b>
+&nbsp;    @Override
+&nbsp;    protected void drawElements(GUI gui) {
+<b class="fc">&nbsp;        gui.drawBackground();</b>
+<b class="fc">&nbsp;        gui.drawYinYang(getModel().getRed(), getModel().getBlue());</b>
+<b class="fc">&nbsp;        gui.drawBorder(getModel().getBorder());</b>
+&nbsp;
+<b class="fc">&nbsp;        gui.drawText(new Position(9, 5), getModel().getEntry(0), getModel().isSelectedWandF() ? &quot;#FFD700&quot; : &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;        gui.drawText(new Position(16, 6), getModel().getEntry(1), getModel().isSelectedPools() ? &quot;#FFD700&quot; : &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;        gui.drawText(new Position(15, 7), getModel().getEntry(2), getModel().isSelectedDiamonds() ? &quot;#FFD700&quot; : &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;        gui.drawText(new Position(16, 8), getModel().getEntry(3), getModel().isSelectedDoors() ? &quot;#FFD700&quot; : &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;        gui.drawText(new Position(5, 9), getModel().getEntry(4), getModel().isSelectedB_E_L() ? &quot;#FFD700&quot; : &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;        gui.drawText(new Position(16, 10), getModel().getEntry(5), getModel().isSelectedBoxes() ? &quot;#FFD700&quot; : &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;        gui.drawText(new Position(5, 37), getModel().getEntry(6), getModel().isSelectedGoBack() ? &quot;#FFD700&quot; : &quot;#FFFFFF&quot;);</b>
+&nbsp;
+<b class="fc">&nbsp;        if (getModel().isSelectedWandF()) {</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 30), &quot;These are the controlable characthers&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(3, 31), &quot;Your goal is to lead them into the&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(11, 32), &quot;end of each level&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(3, 33), &quot;WASD to control Watergirl and the&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(6, 34), &quot;arrow keys control Fireboy&quot;, &quot;#FFFFFF&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (getModel().isSelectedPools()) {</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 30), &quot;Pools are an elemental adversity for&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 31), &quot;the characters. The lava pool kills&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(4, 32), &quot;Watergirl, the water pool kills&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 33), &quot;Fireboy and the acid pool kills both&quot;, &quot;#FFFFFF&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (getModel().isSelectedDiamonds()) {</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(3, 30), &quot;The diamonds are the collectibles&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 31), &quot;of each level. Only Watergirl can get&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 32), &quot;the blue ones while the red ones are&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(14, 33), &quot;for Fireboy&quot;, &quot;#FFFFFF&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (getModel().isSelectedDoors()) {</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 30), &quot;The doors are the exit of each level&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 31), &quot;Only Fireboy can go through the red&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(5, 32), &quot;door and only Watergirl can go&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(9, 33), &quot;through the blue door&quot;, &quot;#FFFFFF&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (getModel().isSelectedB_E_L()) {</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(3, 30), &quot;Elevators are movable platforms in&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 31), &quot;each level. They are activated either&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(3, 32), &quot;by switching a lever or pressing a&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(2, 33), &quot;button. In the case of a button, it&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(9, 34), &quot;needs to stay pressed&quot;, &quot;#FFFFFF&quot;);</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (getModel().isSelectedBoxes()) {</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(3, 30), &quot;These are both an obstacle in the&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(5, 31), &quot;characthers path and a jumping&quot;, &quot;#FFFFFF&quot;);</b>
+<b class="fc">&nbsp;            gui.drawText(new Position(3, 32), &quot;platform to help them reach higher&quot;, &quot;#FFFFFF&quot;);</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-13 01:37</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MenuBuilder</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.LDTS22_23.FB_WG.model.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: MenuBuilder (com.LDTS22_23.FB_WG.model.menu)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MenuBuilder</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (24/24)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.LDTS22_23.FB_WG.model.menu;
+&nbsp;
+&nbsp;import com.LDTS22_23.FB_WG.model.Position;
+&nbsp;import java.util.List;
+&nbsp;
+<b class="fc">&nbsp;public abstract class MenuBuilder {</b>
+&nbsp;    public GameMenu createGameMenu() {
+<b class="fc">&nbsp;        GameMenu gameMenu = new GameMenu();</b>
+<b class="fc">&nbsp;        gameMenu.setRed(createRed());</b>
+<b class="fc">&nbsp;        gameMenu.setBlue(createBlue());</b>
+<b class="fc">&nbsp;        gameMenu.setBorder(createBorder());</b>
+<b class="fc">&nbsp;        return gameMenu;</b>
+&nbsp;    }
+&nbsp;    public LevelMenu createLevelMenu() {
+<b class="fc">&nbsp;        LevelMenu levelmenu = new LevelMenu();</b>
+<b class="fc">&nbsp;        levelmenu.setBorder(createBorder());</b>
+<b class="fc">&nbsp;        levelmenu.setRed(createRed());</b>
+<b class="fc">&nbsp;        levelmenu.setBlue(createBlue());</b>
+<b class="fc">&nbsp;        return levelmenu;</b>
+&nbsp;    }
+&nbsp;    public ScoreMenu createScoreMenu(int score, int redDiamonds, int blueDiamonds) {
+<b class="fc">&nbsp;        ScoreMenu scoreMenu = new ScoreMenu();</b>
+<b class="fc">&nbsp;        scoreMenu.setScore(score);</b>
+<b class="fc">&nbsp;        scoreMenu.setRedDiamonds(redDiamonds);</b>
+<b class="fc">&nbsp;        scoreMenu.setBlueDiamonds(blueDiamonds);</b>
+<b class="fc">&nbsp;        scoreMenu.setBorder(createBorder());</b>
+<b class="fc">&nbsp;        scoreMenu.setRed(createRed());</b>
+<b class="fc">&nbsp;        scoreMenu.setBlue(createBlue());</b>
+<b class="fc">&nbsp;        return scoreMenu;</b>
+&nbsp;    }
+&nbsp;    public InstructionsMenu createInstructionsMenu() {
+<b class="fc">&nbsp;        InstructionsMenu instructionsMenu = new InstructionsMenu();</b>
+<b class="fc">&nbsp;        instructionsMenu.setBorder(createBorder());</b>
+<b class="fc">&nbsp;        instructionsMenu.setRed(createRed());</b>
+<b class="fc">&nbsp;        instructionsMenu.setBlue(createBlue());</b>
+<b class="fc">&nbsp;        return instructionsMenu;</b>
+&nbsp;    }
+&nbsp;    protected abstract List&lt;Position&gt; createRed();
+&nbsp;    protected abstract List&lt;Position&gt; createBlue();
+&nbsp;    protected abstract List&lt;Position&gt; createBorder();
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-13 01:37</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Level</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.LDTS22_23.FB_WG.model.game.level</a>
+</div>
+
+<h1>Coverage Summary for Class: Level (com.LDTS22_23.FB_WG.model.game.level)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Level</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (31/31)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (98/98)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.LDTS22_23.FB_WG.model.game.level;
+&nbsp;
+&nbsp;import com.LDTS22_23.FB_WG.model.Position;
+&nbsp;import com.LDTS22_23.FB_WG.model.game.elements.*;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public class Level {
+&nbsp;    private WaterGirl WaterGirl;
+&nbsp;    private FireBoy FireBoy;
+&nbsp;    private List&lt;Wall&gt; Walls;
+&nbsp;    private List&lt;Pool&gt; Pools;
+&nbsp;    private List&lt;Lever&gt; Levers;
+&nbsp;    private List&lt;Elevator&gt; Elevators;
+&nbsp;    private List&lt;Diamond&gt; Diamonds;
+&nbsp;    private List&lt;Box&gt; Boxes;
+&nbsp;    private List&lt;Door&gt; Doors;
+<b class="fc">&nbsp;    public Level() {}</b>
+<b class="fc">&nbsp;    public FireBoy getFireBoy() {return FireBoy;}</b>
+<b class="fc">&nbsp;    public WaterGirl getWaterGirl() {return WaterGirl;}</b>
+<b class="fc">&nbsp;    public List&lt;Wall&gt; getWalls() {return Walls;}</b>
+<b class="fc">&nbsp;    public List&lt;Pool&gt; getPools() {return Pools;}</b>
+<b class="fc">&nbsp;    public List&lt;Lever&gt; getLevers() {return Levers;}</b>
+<b class="fc">&nbsp;    public List&lt;Elevator&gt; getElevators() {return Elevators;}</b>
+<b class="fc">&nbsp;    public List&lt;Diamond&gt; getDiamonds() {return Diamonds;}</b>
+<b class="fc">&nbsp;    public List&lt;Box&gt; getBoxes() {return Boxes;}</b>
+<b class="fc">&nbsp;    public List&lt;Door&gt; getDoors() {return Doors;}</b>
+<b class="fc">&nbsp;    public void setFireBoy(FireBoy fireBoy) {FireBoy = fireBoy;}</b>
+<b class="fc">&nbsp;    public void setWaterGirl(WaterGirl waterGirl) {WaterGirl = waterGirl;}</b>
+<b class="fc">&nbsp;    public void setWalls(List&lt;Wall&gt; walls) {Walls = walls;}</b>
+<b class="fc">&nbsp;    public void setPools(List&lt;Pool&gt; pools) {Pools = pools;}</b>
+<b class="fc">&nbsp;    public void setLevers(List&lt;Lever&gt; levers) {Levers = levers;}</b>
+<b class="fc">&nbsp;    public void setElevators(List&lt;Elevator&gt; elevators) {Elevators = elevators;}</b>
+<b class="fc">&nbsp;    public void setDiamonds(List&lt;Diamond&gt; diamonds) {Diamonds = diamonds;}</b>
+<b class="fc">&nbsp;    public void setBoxes(List&lt;Box&gt; boxes) {Boxes = boxes;}</b>
+<b class="fc">&nbsp;    public void setDoors(List&lt;Door&gt; doors) {Doors = doors;}</b>
+&nbsp;    public boolean canCharacterMove(Position position) {
+<b class="fc">&nbsp;        for (Wall wall : Walls) {</b>
+<b class="fc">&nbsp;            if (wall.getPosition().equals(position)) return false;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        for (Elevator elevator : Elevators) {</b>
+<b class="fc">&nbsp;            if (elevator.getPosition().equals(position)) return false;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        for (Box box : Boxes) {</b>
+<b class="fc">&nbsp;            if (box.getPosition().equals(position)) {</b>
+<b class="fc">&nbsp;                moveBoxes(box);</b>
+<b class="fc">&nbsp;                return false;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;    public boolean fallInTheAcidPool(Position position) {
+<b class="fc">&nbsp;        for (Pool pool : Pools) {</b>
+<b class="fc">&nbsp;            if (pool.getType() == 0 &amp;&amp; pool.getPosition().equals(position)) return true;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;    public boolean fallInTheLavaPool(Position position) {
+<b class="fc">&nbsp;        for (Pool pool : Pools) {</b>
+<b class="fc">&nbsp;            if (pool.getType() == 1 &amp;&amp; pool.getPosition().equals(position)) return true;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;    public boolean fallInTheWaterPool(Position position) {
+<b class="fc">&nbsp;        for (Pool pool : Pools) {</b>
+<b class="fc">&nbsp;            if (pool.getType() == 2 &amp;&amp; pool.getPosition().equals(position)) return true;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;    public boolean enterRedDoor(Position position) {
+<b class="fc">&nbsp;        for (Door door : Doors) {</b>
+<b class="fc">&nbsp;            if (door.getType() == 0 &amp;&amp; door.getPosition().equals(position)) return true;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;    public boolean enterBlueDoor(Position position) {
+<b class="fc">&nbsp;        for (Door door : Doors) {</b>
+<b class="fc">&nbsp;            if (door.getType() == 1 &amp;&amp; door.getPosition().equals(position)) return true;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return false;</b>
+&nbsp;    }
+&nbsp;    public void retrieveFire(Position position) {
+<b class="fc">&nbsp;        Diamond toRemove = new Diamond(0, 0, 0);</b>
+<b class="fc">&nbsp;        for (Diamond diamond : Diamonds) {</b>
+<b class="fc">&nbsp;            if (diamond.getPosition().equals(position) &amp;&amp; diamond.getType() == 0) {</b>
+<b class="fc">&nbsp;                FireBoy.addRedDiamonds();</b>
+<b class="fc">&nbsp;                toRemove = diamond;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        Diamonds.remove(toRemove);</b>
+&nbsp;    }
+&nbsp;    public void retrieveWater(Position position) {
+<b class="fc">&nbsp;        Diamond toRemove = new Diamond(0,0,0);</b>
+<b class="fc">&nbsp;        for (Diamond diamond : Diamonds) {</b>
+<b class="fc">&nbsp;            if (diamond.getPosition().equals(position) &amp;&amp; diamond.getType() == 1) {</b>
+<b class="fc">&nbsp;                WaterGirl.addBlueDiamonds();</b>
+<b class="fc">&nbsp;                toRemove = diamond;</b>
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        Diamonds.remove(toRemove);</b>
+&nbsp;    }
+&nbsp;    public boolean canBoxMove(Position position) {
+<b class="fc">&nbsp;        for (Wall wall : Walls) {</b>
+<b class="fc">&nbsp;            if (wall.getPosition().equals(position)) return false;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        for (Box box : Boxes) {</b>
+<b class="fc">&nbsp;            if (box.getPosition().equals(position)) return false;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        for (Elevator elevator : Elevators) {</b>
+<b class="fc">&nbsp;            if (elevator.getPosition().equals(position)) return false;</b>
+<b class="fc">&nbsp;        }</b>
+<b class="fc">&nbsp;        return true;</b>
+&nbsp;    }
+&nbsp;    public void moveBoxes(Box box) {
+<b class="fc">&nbsp;        for (Box box1 : Boxes) {</b>
+<b class="fc">&nbsp;            if (box1.getNumber() == box.getNumber()) {</b>
+<b class="fc">&nbsp;                if (box.getSide() == 0) {</b>
+<b class="fc">&nbsp;                    if (canBoxMove(box1.getPosition().moveRight().moveRight())) {</b>
+<b class="fc">&nbsp;                        box1.setPosition(box1.getPosition().moveRight().moveRight());</b>
+&nbsp;                    }
+&nbsp;                }
+<b class="fc">&nbsp;                if (box.getSide() == 1) {</b>
+<b class="fc">&nbsp;                    if (canBoxMove(box1.getPosition().moveLeft().moveLeft())) {</b>
+<b class="fc">&nbsp;                        box1.setPosition(box1.getPosition().moveLeft().moveLeft());</b>
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;    public void gravityForBoxes() {
+<b class="fc">&nbsp;        for (Box box : Boxes) {</b>
+<b class="fc">&nbsp;            if (canBoxMove(box.getPosition().moveDown()))</b>
+<b class="fc">&nbsp;                box.setPosition(box.getPosition().moveDown());</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;    public void leverCallElevator(Position position) {
+<b class="fc">&nbsp;        for (Lever lever : Levers) {</b>
+<b class="fc">&nbsp;            if (lever.getPosition().equals(position)) {</b>
+<b class="fc">&nbsp;                lever.onAndOff();</b>
+<b class="fc">&nbsp;                for (int i = 0; i &lt; Elevators.size(); i++) {</b>
+<b class="fc">&nbsp;                    if (lever.getNumber() == Elevators.get(i).getNumber()) {</b>
+<b class="fc">&nbsp;                        if (lever.getPressed() == 0) {</b>
+<b class="fc">&nbsp;                            Elevators.set(i, new Elevator(Elevators.get(i).getPosition().get_x(), Elevators.get(i).getInitial_y(), Elevators.get(i).getInitial_y(), Elevators.get(i).getNumber()));</b>
+&nbsp;                        }
+<b class="fc">&nbsp;                        if (lever.getPressed() == 1) {</b>
+<b class="fc">&nbsp;                            Elevators.set(i, new Elevator(Elevators.get(i).getPosition().get_x(), Elevators.get(i).getPosition().get_y() + 3, Elevators.get(i).getInitial_y(), Elevators.get(i).getNumber()));</b>
+&nbsp;                        }
+&nbsp;                    }
+&nbsp;                }
+&nbsp;            }
+<b class="fc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-13 01:37</div>
+</div>
+</body>
+</html>

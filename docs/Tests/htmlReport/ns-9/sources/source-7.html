@@ -1,0 +1,122 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > ScoreMenu</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.LDTS22_23.FB_WG.model.menu</a>
+</div>
+
+<h1>Coverage Summary for Class: ScoreMenu (com.LDTS22_23.FB_WG.model.menu)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ScoreMenu</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/10)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.LDTS22_23.FB_WG.model.menu;
+&nbsp;
+&nbsp;import java.util.Arrays;
+&nbsp;
+&nbsp;public class ScoreMenu extends Menu {
+&nbsp;    private int Score;
+&nbsp;    private int BlueDiamonds;
+&nbsp;    private int RedDiamonds;
+<b class="fc">&nbsp;    public ScoreMenu() {super(Arrays.asList(&quot;&lt;- Go Back&quot;, &quot;Retry&quot;, &quot;Next level -&gt;&quot;));}</b>
+<b class="fc">&nbsp;    public int getScore() {return Score;}</b>
+<b class="fc">&nbsp;    public int getRedDiamonds() {return RedDiamonds;}</b>
+<b class="fc">&nbsp;    public int getBlueDiamonds() {return BlueDiamonds;}</b>
+<b class="fc">&nbsp;    public void setScore(int score) {Score = score;}</b>
+<b class="fc">&nbsp;    public void setBlueDiamonds(int blueDiamonds) {BlueDiamonds = blueDiamonds;}</b>
+<b class="fc">&nbsp;    public void setRedDiamonds(int redDiamonds) {RedDiamonds = redDiamonds;}</b>
+<b class="fc">&nbsp;    public boolean isSelectedNextLevel() {return isSelected(2);}</b>
+<b class="fc">&nbsp;    public boolean isSelectedRetry() {return isSelected(1);}</b>
+<b class="fc">&nbsp;    public boolean isSelectedGoBack() {return isSelected(0);}</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-13 01:37</div>
+</div>
+</body>
+</html>
